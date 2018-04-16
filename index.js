@@ -15,14 +15,15 @@ $(document).ready(function () {
     });
         return finalHTML;
     }
-   
-    var testHTML = renderMovies(movieData);
-    $('.movies-container card-columns').html(testHTML);
+    //var testHTML = renderMovies(movieData);
+    //$('.movies-container').html(testHTML);
     
+    $('form').on('submit', function(e){
+     e.preventDefault();
+    var renderedHTML = renderMovies(movieData);
+    $('.movies-container').append(renderedHTML);
     
-    //$("form").submit(function(e){
-     //   e.preventDefault();
-    //    var renderedHTML = renderMovies(movieData);
-    //    $('.movies-cont').append(renderedHTML);
-   // });
+   });
 });
+
+   
